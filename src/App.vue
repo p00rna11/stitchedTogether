@@ -1,18 +1,22 @@
 <template>
   <div id="app">
     <div class="container">
-      <div class="text">My Beloved Dog</div>
-      <button @click="logoutUser">Logout</button>
+      <div class="text">Stitched Together</div>
+      <button v-if="path.name !== 'Login'" @click="logoutUser">Logout</button>
     </div>
     <router-view />
   </div>
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
+import { computed } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 import { logout } from './services/api';
 
 const router = useRouter();
+const route = useRoute();
+
+const path = computed(() => route)
 
 const logoutUser = async () => {
   await logout();

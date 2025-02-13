@@ -3,6 +3,7 @@
     <div class="modal-content">
       <h3>My Match Dog</h3>
       <DogCard :dog="dog" :hideFav="true"/>
+      <button>Get Location</button>
       <button class="close-button" @click="closeModal">Close</button>
     </div>
   </div>

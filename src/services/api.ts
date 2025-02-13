@@ -1,14 +1,14 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://frontend-take-home-service.fetch.com',
+  baseURL: import.meta.env.VITE_API_BASE_URL,
   withCredentials: true,
 });
+
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response && error.response.status === 401) {
-      // Redirect to the login page
       window.location.href = '/login';
     }
     return Promise.reject(error);
@@ -44,3 +44,17 @@ export const matchDog = async (dogIds: string[]) => {
   return response.data.match;
 };
 
+export const fetchLocation = async (dogIds: string[]) => {
+  const response = await api.post('/dogs/match', dogIds);
+  return response.data.match;
+};
+
+export const getLocation = async (zipCodes: number[]) => {
+  const response = await api.post('/locations', zipCodes);
+  return response.data;
+};
+
+export const locationSearch = async (params: any) => {
+  const response = await api.post('/locations/search', { params });
+  return response.data;
+};
