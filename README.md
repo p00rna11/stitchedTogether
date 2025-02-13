@@ -1,5 +1,31 @@
-# Vue 3 + TypeScript + Vite
+Hello There!!!,
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Welcome to stitchedTogether,
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+To run this project in your local
+
+Pull this code from github and make sure nodejs is installed and IDE to run this code in your local machine.
+After cloning project into local, use following commands to setup & run.
+
+# Project Setup
+----
+npm install / npm i
+----
+
+## compiles and hot reloads for development
+----
+npm run dev
+----
+
+
+### compiles and minifies for production 
+----
+npm run build
+----
+
+
+
+What configuration or language used in this project?
+----
+Vue 3 + TypeScript + Vite
+----
