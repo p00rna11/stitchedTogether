@@ -28,12 +28,12 @@
     </div>
     <div style="display: flex; flex-direction: column">
       <figure class="figures three">
-        <img src="../assets/Milo.jpeg" alt="Auggie"></img>
+        <img src="../assets/milo.jpeg" alt="Auggie"></img>
         <figcaption>Auggie</figcaption>
       </figure>
 
       <figure class="figures four">
-        <img src="../assets/Milos.jpeg" alt="Milo"></img>
+        <img src="../assets/milos.jpeg" alt="Milo"></img>
         <figcaption>Milo</figcaption>
       </figure>
     </div>
