@@ -13,22 +13,42 @@
     >
       Next
     </button>
+    <button v-if="favorites.length" @click="generateMatch">Generate Match</button>
+    <Match ref="matchDog" />
   </div>
+
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed,ref } from 'vue';
 import { useDogStore } from '../stores/dogStore';
+import Match from '../components/Match.vue';
+const props = defineProps<{
+  filters: {
+    breeds: string[],
+    ageMin: number,
+    ageMax: number
+  }
+}>();
 
 const dogStore = useDogStore();
-
+const matchId = ref(null);
+const matchDog = ref();
 const currentPage = computed(() => dogStore.currentPage);
 const totalPages = computed(() => Math.ceil(dogStore.totalDogs / 25));
+const dogs = computed(() => dogStore.dogs);
+const favorites = computed(() => dogStore.favorites);
 
 const changePage = (page: number) => {
   dogStore.currentPage = page;
-  dogStore.search({});
+  dogStore.search(props.filters);
 };
+
+const generateMatch = async () => {
+  matchId.value = await dogStore.generateMatch();
+  const selectedDog = dogs.value.find(dog => dog.id == matchId.value);
+  selectedDog && matchDog.value.openModal(selectedDog);
+}
 </script>
 
 <style scoped>

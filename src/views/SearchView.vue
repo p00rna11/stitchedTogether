@@ -4,7 +4,6 @@
     <div class="dog-list">
       <DogCard v-for="dog in dogs" :key="dog.id" :dog="dog" :hideFav="false"/>
     </div>
-    <Pagination />
   </div>
 </template>
 
@@ -13,7 +12,6 @@ import { computed } from 'vue';
 import { useDogStore } from '../stores/dogStore';
 import DogCard from '../components/DogCard.vue';
 import SearchFilter from '../components/SearchFilter.vue';
-import Pagination from '../components/Pagination.vue';
 
 const dogStore = useDogStore();
 const dogs = computed(() => dogStore.dogs);
