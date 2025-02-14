@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
-import { getBreeds, searchDogs, fetchDogs, matchDog, getLocation, locationSearch } from '../services/api';
+import { getBreeds, searchDogs, fetchDogs, matchDog, locationSearch } from '../services/api';
 
 export const useDogStore = defineStore('dog', () => {
   const breeds = ref<string[]>([]);
@@ -23,7 +23,6 @@ export const useDogStore = defineStore('dog', () => {
     const { resultIds, total } = await searchDogs(params);
     totalDogs.value = total;
     dogs.value = await fetchDogs(resultIds);
-    const data = await getLocation([52135]);
     await locationSearch({city: 'Clermont'});
   };
 
