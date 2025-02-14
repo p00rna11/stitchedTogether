@@ -25,7 +25,6 @@ npm run build
 
 
 
-What configuration or language used in this project?
-----
-Vue 3 + TypeScript + Vite
-----
+After running in your local, You will be landed onto a login page where you are asked to provide username and email.
+on successful login you will be landed into a search page where you will be able to see all available pets, from which you can 
+sort by breed or browse for more and by selecting the add to favourite you can find a better match based your favourite by clicking on generate match.
